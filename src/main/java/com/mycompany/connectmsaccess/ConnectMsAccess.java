@@ -10,16 +10,14 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author MJ
  */
 public class ConnectMsAccess {
 
     public static Connection conn() {
 
         try {
-            String url = "jdbc:ucanaccess://C://Users//MJ//Documents//myDB.accdb";
-            Connection conn = DriverManager.getConnection(url);
-            return conn;
+           Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/MSI/Desktop/Database2.accdb");
+            return con;
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e);
         }
