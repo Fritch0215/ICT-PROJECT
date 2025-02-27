@@ -16,7 +16,7 @@ public class ConnectMsAccess {
     public static Connection conn() {
 
         try {
-           Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/MSI/Desktop/Database2.accdb");
+           Connection con = DriverManager.getConnection("jdbc:ucanaccess://C://Users//PC//Documents//Database3.accdb");
             return con;
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e);

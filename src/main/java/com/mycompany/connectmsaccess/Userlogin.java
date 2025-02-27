@@ -41,6 +41,8 @@ public class Userlogin extends javax.swing.JFrame {
         txt_password = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,17 +52,22 @@ public class Userlogin extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Raleway SemiBold", 1, 18)); // NOI18N
         jLabel1.setText("Password*");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 100, 133, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, 133, -1));
 
         jLabel2.setFont(new java.awt.Font("Raleway SemiBold", 1, 18)); // NOI18N
         jLabel2.setText("Username *");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 53, 133, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, 133, -1));
 
         txt_username.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jPanel1.add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 53, 224, -1));
+        txt_username.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_usernameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, 240, -1));
 
         txt_password.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jPanel1.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 96, 224, -1));
+        jPanel1.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, 240, 40));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton1.setText("Login");
@@ -69,7 +76,7 @@ public class Userlogin extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 133, -1, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 440, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton2.setText("Register");
@@ -78,22 +85,24 @@ public class Userlogin extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 133, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 500, 130, -1));
+
+        jLabel4.setFont(new java.awt.Font("Sitka Banner", 1, 48)); // NOI18N
+        jLabel4.setText("Welcome to Login");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Downloads\\Untitled design.png")); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -103,10 +112,11 @@ public class Userlogin extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        String username = txt_username.getText();
     char[] pass = txt_password.getPassword();
+    
     String userpassword = String.valueOf(pass);
 
    try {
-    String sqlquery = "SELECT * FROM USERLOGIN WHERE user_name = ? AND user_pass = ?";
+    String sqlquery = "SELECT * FROM USERLOGIN WHERE user_name = ? AND user_password = ?";
     pst = conn.prepareStatement(sqlquery);
     pst.setString(1, username);
     pst.setString(2, userpassword);
@@ -114,12 +124,26 @@ public class Userlogin extends javax.swing.JFrame {
     rs = pst.executeQuery();
     
     if (!rs.next()) {
-        JOptionPane.showMessageDialog(null, "Username and password are incorrect");
-    } else {
-        JOptionPane.showMessageDialog(null, "Login Successful!");
-        new MainMenu().show();
-        MainMenu.lbl_name.setText(rs.getString("firstname") + " " + rs.getString("lastname"));
-    }
+            JOptionPane.showMessageDialog(null, "Username and password are incorrect");
+        } else {
+            String userType = rs.getString("usertype"); // Get usertype from the result set
+
+            if ("Student".equalsIgnoreCase(userType)) {
+                JOptionPane.showMessageDialog(null, "Login Successful! Redirecting to Student Home.");
+                new Studenthome().show();
+                Studenthome.lbl_name.setText(rs.getString("firstname")+ " " +rs.getString("lastname"));
+               
+            } else if ("Employee".equalsIgnoreCase(userType)) {
+                JOptionPane.showMessageDialog(null, "Login Successful! Redirecting to Employee Home.");
+                new Employeehome().setVisible(true); // Open EmployeeHome JFrame
+                Employeehome.lbl_employee.setText(rs.getString("firstname")+ " " +rs.getString("lastname"));
+            }
+            
+            this.dispose(); // Close the login JFrame
+
+            // Optionally set the logged-in user's name in the next frame
+            // MainMenu.lbl_name.setText(rs.getString("firstname") + " " + rs.getString("lastname"));
+        }
 } catch (SQLException e) {
     JOptionPane.showMessageDialog(null, "SQL Error: " + e.getMessage());
 }
@@ -133,6 +157,10 @@ public class Userlogin extends javax.swing.JFrame {
         this.dispose();
         new Register().show();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txt_usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_usernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_usernameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,6 +202,8 @@ public class Userlogin extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField txt_password;
     private javax.swing.JTextField txt_username;

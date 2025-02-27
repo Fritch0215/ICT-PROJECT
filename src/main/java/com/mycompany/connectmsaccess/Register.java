@@ -44,9 +44,12 @@ public class Register extends javax.swing.JFrame {
         txt_firstname = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txt_mname = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        txt_mname = new javax.swing.JTextField();
         txt_lastname = new javax.swing.JTextField();
+        cmb_userType = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,17 +59,17 @@ public class Register extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Raleway SemiBold", 1, 18)); // NOI18N
         jLabel1.setText("Password*");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 81, 133, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 133, -1));
 
         jLabel2.setFont(new java.awt.Font("Raleway SemiBold", 1, 18)); // NOI18N
         jLabel2.setText("Username *");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 44, 133, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 133, -1));
 
         txt_username.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jPanel1.add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 248, -1));
+        jPanel1.add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 248, -1));
 
         txt_password.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jPanel1.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 77, 248, -1));
+        jPanel1.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, 248, -1));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton1.setText("Cancel");
@@ -75,37 +78,54 @@ public class Register extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 237, -1, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 690, -1, -1));
 
+        jButton2.setBackground(new java.awt.Color(0, 102, 255));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Register");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 237, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 640, -1, -1));
 
         txt_firstname.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jPanel1.add(txt_firstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 114, 248, -1));
+        jPanel1.add(txt_firstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 248, -1));
 
         jLabel3.setFont(new java.awt.Font("Raleway SemiBold", 1, 18)); // NOI18N
         jLabel3.setText("Firstname *");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 118, 133, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 133, -1));
 
         jLabel4.setFont(new java.awt.Font("Raleway SemiBold", 1, 18)); // NOI18N
         jLabel4.setText("Middle Name *");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 155, 133, -1));
-
-        txt_mname.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jPanel1.add(txt_mname, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 151, 248, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 133, -1));
 
         jLabel5.setFont(new java.awt.Font("Raleway SemiBold", 1, 18)); // NOI18N
         jLabel5.setText("Lastname *");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 192, 133, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 133, -1));
+
+        txt_mname.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jPanel1.add(txt_mname, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 248, -1));
 
         txt_lastname.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jPanel1.add(txt_lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 188, 248, -1));
+        jPanel1.add(txt_lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 310, 248, -1));
+
+        cmb_userType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Employee", "Student" }));
+        cmb_userType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmb_userTypeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmb_userType, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, 250, 30));
+
+        jLabel7.setFont(new java.awt.Font("Raleway SemiBold", 1, 18)); // NOI18N
+        jLabel7.setText("Status*");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, 133, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Downloads\\Untitled design (1).png")); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -135,12 +155,19 @@ public class Register extends javax.swing.JFrame {
         fname = txt_firstname.getText();
         mname = txt_mname.getText();
         lname = txt_lastname.getText();
+        String userType = cmb_userType.getSelectedItem().toString(); 
+
+        if (username.isEmpty() || upass.isEmpty() || fname.isEmpty() || mname.isEmpty() || lname.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Registration Unsuccessful: Please fill all fields");
+    } else {
         try {
-            String sql = "INSERT INTO USERLOGIN (user_name,user_pass,firstname,middlename,lastname) "
-                    + "VALUES ('"+username+"','"+upass+"','"+fname+"','"+mname+"','"+lname+"')";
+            
+            String sql = "INSERT INTO USERLOGIN (user_name,user_password,firstname,middlename,lastname,usertype) "
+                    + "VALUES ('"+username+"','"+upass+"','"+fname+"','"+mname+"','"+lname+"','"+userType+"')";
             pst = conn.prepareStatement(sql);
             pst.execute();
             JOptionPane.showMessageDialog(null, "Registration Successful");
+            
             txt_username.setText("");
             txt_password.setText("");
             txt_firstname.setText("");
@@ -150,12 +177,17 @@ public class Register extends javax.swing.JFrame {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e);
         }
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.dispose();
         new Userlogin().show();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void cmb_userTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_userTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmb_userTypeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,6 +225,7 @@ public class Register extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cmb_userType;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -200,6 +233,8 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txt_firstname;
     private javax.swing.JTextField txt_lastname;
