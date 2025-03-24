@@ -56,7 +56,7 @@ public class Studenthome extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 660, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Downloads\\background for main menu.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/connectmsaccess/Design/Untitled design (1).png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

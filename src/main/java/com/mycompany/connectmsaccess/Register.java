@@ -49,6 +49,7 @@ public class Register extends javax.swing.JFrame {
         txt_lastname = new javax.swing.JTextField();
         cmb_userType = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,18 +59,18 @@ public class Register extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Raleway SemiBold", 1, 18)); // NOI18N
-        jLabel1.setText("Password*");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 133, -1));
+        jLabel1.setText("Password:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, 133, -1));
 
         jLabel2.setFont(new java.awt.Font("Raleway SemiBold", 1, 18)); // NOI18N
-        jLabel2.setText("Username *");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 133, -1));
+        jLabel2.setText("ID:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 133, -1));
 
         txt_username.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jPanel1.add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 248, -1));
+        jPanel1.add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 248, -1));
 
         txt_password.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jPanel1.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, 248, -1));
+        jPanel1.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, 248, -1));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton1.setText("Cancel");
@@ -78,7 +79,7 @@ public class Register extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 690, -1, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 650, -1, -1));
 
         jButton2.setBackground(new java.awt.Color(0, 102, 255));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -89,28 +90,28 @@ public class Register extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 640, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 600, -1, -1));
 
         txt_firstname.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jPanel1.add(txt_firstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 248, -1));
+        jPanel1.add(txt_firstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, 248, -1));
 
         jLabel3.setFont(new java.awt.Font("Raleway SemiBold", 1, 18)); // NOI18N
-        jLabel3.setText("Firstname *");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 133, -1));
+        jLabel3.setText("Firstname :");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 320, 133, -1));
 
         jLabel4.setFont(new java.awt.Font("Raleway SemiBold", 1, 18)); // NOI18N
-        jLabel4.setText("Middle Name *");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 133, -1));
+        jLabel4.setText("Middle Name :");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, 133, -1));
 
         jLabel5.setFont(new java.awt.Font("Raleway SemiBold", 1, 18)); // NOI18N
-        jLabel5.setText("Lastname *");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 133, -1));
+        jLabel5.setText("Lastname :");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 440, 133, -1));
 
         txt_mname.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jPanel1.add(txt_mname, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 248, -1));
+        jPanel1.add(txt_mname, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, 248, -1));
 
         txt_lastname.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jPanel1.add(txt_lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 310, 248, -1));
+        jPanel1.add(txt_lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 440, 248, -1));
 
         cmb_userType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Employee", "Student" }));
         cmb_userType.addActionListener(new java.awt.event.ActionListener() {
@@ -118,30 +119,30 @@ public class Register extends javax.swing.JFrame {
                 cmb_userTypeActionPerformed(evt);
             }
         });
-        jPanel1.add(cmb_userType, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, 250, 30));
+        jPanel1.add(cmb_userType, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 510, 250, 30));
 
         jLabel7.setFont(new java.awt.Font("Raleway SemiBold", 1, 18)); // NOI18N
-        jLabel7.setText("Status*");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, 133, -1));
+        jLabel7.setText("Status:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 510, 133, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Downloads\\Untitled design (1).png")); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 1, 70)); // NOI18N
+        jLabel8.setText("Register");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/connectmsaccess/Design/Register.png"))); // NOI18N
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 10, Short.MAX_VALUE))
         );
 
         pack();
@@ -235,6 +236,7 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txt_firstname;
     private javax.swing.JTextField txt_lastname;
