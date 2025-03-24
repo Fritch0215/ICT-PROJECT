@@ -24,6 +24,8 @@ public class Userlogin extends javax.swing.JFrame {
         initComponents();
     conn = ConnectMsAccess.conn();
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -114,7 +116,9 @@ public class Userlogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       String username = txt_username.getText();
+     
+        
+        String username = txt_username.getText();
     char[] pass = txt_password.getPassword();
     
     String userpassword = String.valueOf(pass);
